@@ -1,7 +1,7 @@
 
 /*
-!s:: ;; ÆĞ¹Ğ¸®µ¥ÀÌ ±ÙÅÂ Á¶»ç
-	WinActivate, Global HR - Windows Internet Explorer provided by LG Display
+!s:: ;; íŒ¨ë°€ë¦¬ë°ì´ ê·¼íƒœ ì¡°ì‚¬
+	WinActivate, Global HR - Windows Internet Explorer provided
 	click, left, 605, 86
 	click, left, 605, 86
 	sleep, 50
@@ -11,7 +11,7 @@
 	click, left, up, 519, 300
 	sleep, 50
 	send, ^{c}
-	WinActivate, Microsoft Excel - Á¶Á÷ÀÏº°±ÙÅÂÇöÈ²»ó¼¼_OLED TV È¸·Î¼³°è1ÆÀ_20150508_v0.1_d-0904707182b84286_40f4-m.xlsx
+	WinActivate, Microsoft Excel - ì¡°ì§ì¼ë³„ê·¼íƒœí˜„í™©ìƒì„¸_OLED TV íšŒë¡œì„¤ê³„1íŒ€_20150508_v0.1_d-0904707182b84286_40f4-m.xlsx
 	send, {enter}
 	send, ^{v}
 	return
@@ -111,23 +111,11 @@ sleep, 20000
 	}
 	return
 
-;f1::
-;		WinActivate,::: LG Display PLM System ::: - Microsoft Internet Explorer
-;		click,left, 433, 233
-;		Send, {Ctrldown}a{Ctrlup}
-;		Send, {Ctrldown}v{Ctrlup}
-;		Send, {Enter}
-;		sleep, 500
-;		click,left, 419,325
-;		sleep, 500
-;		MouseMove, 630,384
-;		return
-
 #g::
-	IfWinExist LGD Global Portal -
+	IfWinExist Global Portal -
 	{
 		WinActivate
-		WinWaitActive, LGD Global Portal -
+		WinWaitActive, Global Portal -
 		sleep, 200
 ;		WinGetPos, , ,Width, , 
 ;		sleep, 200
@@ -139,9 +127,8 @@ sleep, 20000
 	else
 	{
 		;run, C:\Program Files\Internet Explorer\IEXPLORE.EXE
-		;WinWaitActive, ºó ÆäÀÌÁö - Windows Internet Explorer provided by LG Display
+		;WinWaitActive, ë¹ˆ í˜ì´ì§€ - Windows Internet Explorer provided
 		run, http://portal.lgdisplay.com:8080
-		WinWaitActive, LGD Global Portal -
 		sleep, 200
 ;		WinGetPos, , ,Width, , 
 ;		sleep, 2200
@@ -152,11 +139,11 @@ sleep, 20000
 	}
 	return
 
-!g::									;;;;;;;; ERP ½ÃÀÛ
-	IfWinExist LGD Global Portal - Microsoft Internet Explorer
+!g::									;;;;;;;; ERP ì‹œì‘
+	IfWinExist Global Portal - Microsoft Internet Explorer
 	{
 		WinActivate
-		WinWaitActive, LGD Global Portal - Microsoft Internet Explorer
+		WinWaitActive,  Global Portal - Microsoft Internet Explorer
 		sleep, 200
 		WinGetPos, , ,Width, , 
 		sleep, 200
@@ -166,33 +153,14 @@ sleep, 20000
 		WinGetPos, , ,Width, , 
 		Width+=-958+736
 		Click,Left,%Width%,303
-		WinWaitActive, http://erp.lgdisplay.com:8000/OA_HTML/sso_index.jsp - Microsoft Internet Explorer
+		WinWaitActive, http://erp
 		sleep, 200
 		Click, left, 149,212
 
-;		WinWaitActive, Oracle Applications Home Page - Microsoft Internet Explorer
-;
-;
-;		WinGetPos, , ,Width, , 
-;		sleep, 200
-;		Width+=-1288+1150
-;		Click,Left,%Width%,150
-;	}
-;	else
-;	{
-;		run, C:\Program Files\Internet Explorer\IEXPLORE.EXE
-;		WinWaitActive, ºó ÆäÀÌÁö - Windows Internet Explorer provided by LG Display
-;		run, http://portal.lgdisplay.com:8080
-;		WinWaitActive, LGD Global Portal - Microsoft Internet Explorer
-;		sleep, 200
-;		WinGetPos, , , Width, , 
-;		sleep, 2000
-;		Width+=-1288+1150
-;		Click,Left,%Width%,150
 	}
 	return
 
-`::	;via ¶ÕÀ»¶§ layer ¿øº¹
+`::	;via ëš«ì„ë•Œ layer ì›ë³µ
 	
 	MouseGetPos, Mouse_X, Mouse_Y, , ,
 	widthh=%widthhh%
@@ -201,7 +169,7 @@ sleep, 20000
 	MouseMove,%Mouse_X%, %Mouse_Y%
 	return
 
-f1::	;Line Width Á¶Á¤
+f1::	;Line Width ì¡°ì •
 	MouseGetPos, Mouse_X, Mouse_Y, , ,
 	widthh=%widthhh%
 	widthh-=200 
@@ -229,8 +197,8 @@ f5::	; cut fill
 
 */
 /*
-f3::	; ¼öÁ÷ ¼±±ß±â
-	IfWinExist Xrcmd: ¿ø°İ ½ÇÇà °á°ú
+f3::	; ìˆ˜ì§ ì„ ê¸‹ê¸°
+	IfWinExist Xrcmd: ì›ê²© ì‹¤í–‰ ê²°ê³¼
 	{
 		MouseGetPos, Mouse_X, Mouse_Y, , , 
 		sleep, 100
@@ -254,23 +222,23 @@ f3::	; ¼öÁ÷ ¼±±ß±â
 
 
 
-#i::	;ÀÎ¹°Á¤º¸
-	IfWinExist Microsoft Excel - ¸ÅÅ©·Î °ü¸®Áß_¾÷Ã¼¿¬¶ôÃ³  [È£È¯ ¸ğµå]
+#i::	;ì¸ë¬¼ì •ë³´
+	IfWinExist Microsoft Excel - ë§¤í¬ë¡œ ê´€ë¦¬ì¤‘_ì—…ì²´ì—°ë½ì²˜  [í˜¸í™˜ ëª¨ë“œ]
 	{
 	    WinActivate
 	}
 	else
 	{
-		run, D:\2. ¾÷¹«\1. ±Ô°İ& ¾ç½Ä\12. ¾÷Ã¼ ¿¬¶ôÃ³\¸ÅÅ©·Î °ü¸®Áß_¾÷Ã¼¿¬¶ôÃ³.xls
+		run, D:\2. ì—…ë¬´\1. ê·œê²©& ì–‘ì‹\12. ì—…ì²´ ì—°ë½ì²˜\ë§¤í¬ë¡œ ê´€ë¦¬ì¤‘_ì—…ì²´ì—°ë½ì²˜.xls
 	}
 	return
 
-#u::	;U-Dock »õ¹®¼­ µî·Ï
-	IfWinExist u-DocK - Windows Internet Explorer provided by LG Display
+#u::	;U-Dock ìƒˆë¬¸ì„œ ë“±ë¡
+	IfWinExist u-DocK - Windows Internet Explorer provided
 	{
     WinActivate
 click, left,333,183
-WinWaitActive, u-DocK - ¹®¼­ µî·ÏÇÏ±â - Windows Internet Explorer provided by LG Display
+WinWaitActive, u-DocK - ë¬¸ì„œ ë“±ë¡í•˜ê¸° - Windows Internet Explorer provided
 sleep,1000
 click, left,271,173
 sleep,100
@@ -294,11 +262,11 @@ click, left,548,173
 else
 {
 run, C:\Program Files\Internet Explorer\IEXPLORE.EXE
-WinWaitActive, ºó ÆäÀÌÁö - Windows Internet Explorer provided by LG Display
+WinWaitActive, ë¹ˆ í˜ì´ì§€ - Windows Internet Explorer provided
 run, http://edms.lgdisplay.com:8080/Servlet/MainContent.do
-WinWaitActive, u-DocK - Windows Internet Explorer provided by LG Display
+WinWaitActive, u-DocK - Windows Internet Explorer provided
 click, left,333,183
-WinWaitActive, http://edms.lgdisplay.com:8080/?service=create_in_web&node_key=&node_type= - u-DocK - ¹®¼­ µî·ÏÇÏ±â - Windows Internet Explorer provi
+WinWaitActive, http://edms
 sleep,3000
 click, left,271,173
 sleep,100
@@ -321,104 +289,7 @@ click, left,548,173
 
 	}
 	return
-/*
-#n::
-	IfWinExist ³×ÀÌ¹ö :: ¼¼»óÀÇ ¸ğµç Áö½Ä, ³×ÀÌ¹ö - Microsoft Internet Explorer
-	{
-	    WinActivate
-	}
-	else
-	{
-		run, C:\Program Files\Internet Explorer\IEXPLORE.EXE
-		WinWaitActive, ºó ÆäÀÌÁö - Windows Internet Explorer provided by LG Display
-		run, http://www.naver.com
-	}
-	return
-*/
 
-#!l::
-	clipboard=jyj70@lgdisplay.com, poohhj@lgdisplay.com, ssy0817@lgdisplay.com, csh03@lgdisplay.com
-	Send, ^v
-	return
-;
-; ¸í´Ü
-;
-;±èÆÇ¿­C
-;1part : ¹Ú»ó±ÔC, ±è¿¬¼±J, ÀÌ»óÈÆY, ±è»çÈ²Y, ÀÓ½ÂÇöY, °û¼±¿ìJ, ±èÁ¾È£Y, ÀÌÈ£¼®Y, ¿ÀÁöÈÆJ, ±è¼±È¯Y, Á¶»óÁØC, ÃÖÁøÃ¶J
-;2part : Çã¿ëÁØS, ±èÀç±âJ, ±è°ü¼±J, ÀÌ½ÂÁÖY, ÀÌÅÂÇöJ, ÀÌ¿µÈÆY, À¯¿í»óY, ±èÇõÁøJ, Á¤ÁØÅÂJ, ÀÓÁ¾ÇÏY, Á¶¼ö°æY, Á¶±ÔÇàJ
-;3part : ¹ÚÁø¿ìJ, ÃÖ¼ºÈÆY, Á¤Áø¿µC, ÃÖÁøÈ£J, ¼­º´ÇöY, ½Å¿µ½ÄY, ½É¼Ò¿¬Y, ±è½ÂÈ¯J, ±èÅÂ¿µJ, ±è¼¼¿µY
-;4part : È«¿¬Ã¤S, º¯¼®±ÔS, ÀÌÈ¿±æS, ÀÓ¼ºÈ£J, ÀÌ°æ¿øY, ±è¼ºÁßJ, °­ÅÂ¿íY, Á¤Ã¢¼öJ, ÀÌÁÖ¼®Y, ·ùÁ¦½ÂY
-;
-;D1109DTV55121	LC550WUL-SBM2-831
-;D1109DTV55092	LC550WUL-SBM1-831 *
-;D1109DTV55122	LC550WUL-SBM3-831 *
-;
-;A0308DTV47007	LC470WUL-SBM3-731
-;D1109DTV47091 	LC470WUL-SBM1-732
-;D1109DTV47119 	LC470WUL-SBM4-731 *
-;D1109DTV47120 	LC470WUL-SBM3-732 *
-;
-;D1109DTV42112 	LC420WUL-SBM2-731 *
-;
-;D1109DTV47275	LC470DUD-SCM1-831 *
-;
-;D1109DTV47267	LC470MUT-SCA1-731 *
-;D1109DTV55206	LC550MUT-SCA1-831		6060L-1628A B/A P/N
-;D1109DTV55236	LC550EUB-SCA1-831 *       6060L-1619A B/A P/N
-;D1109DTV55406	LC550EUB-SCA1-83Q *
-;D1110DTV55582  LC550EUD-SCA1-831 *
-
-;D1109DTV55483	LC550DUS-SCM1-831
-;D1110DTV55543	LC550EUH-SCA1-831
-
-;D1110DAA55760	LC550DUC-SDM1-831
-;D1110DAA55806	LC550DUT-SDA1-831	6060L-2224A
-
-;D4110D12XX267  All In One TDR °øÅë PJT
-;D1111DAA55BRU  LC550LUD-MEP1-L31
-;D1112DAA55CJT  LC550LUD-MEP2-L31
-;D1113DAA55ALK  LC550LUD-LGP1-831
-
-#t::
-	clipboard=OLED TV È¸·Î¼³°è1ÆÀ
-	Send, ^v
-	return
-
-#^1::
-	clipboard=D1110DTV55582		;LC550EUB-SCA1-831 ÇÁ·ÎÁ§Æ® ÄÚµå
-	Send, ^v
-	return
-#^t::
-	clipboard=47090
-;;;;;;	clipboard=40073			;LGDKRA.TV LED È¸·Î¼³°èÆÀ ÄÚµå
-;;;;;;;;;D1109DTV55495 			;;; LGDKRA.TV È¸·Î¼³°è2ÆÀ ÄÚµå
-	Send, ^v
-	return
-
-
-#k::
-	clipboard=foroscar,mj.lee,kbh83,yikim80,rooney,invictus,juranlee ; ¿Àµ¿°æ, ÀÌ¹®ÁØ, ±è¹éÈ¯, ±è¿µÀÎ, ¹®°æ¼ö, ±èÁø¿í, ÀÌÁÖ¶õ
-	Send, ^v
-	return
-
-!#k::
-	clipboard=ÀÌÇö±â, ±è¿µÀÎ, ¹ÚÀÏ±Ç, ±èÇüÁß, ¿Àµ¿°æ, ¹®°æ¼ö, Æí¸íÁø, ÀÓÀÌ¶û, ÃµÇö¼±, ÀÌÁÖ¶õ, Á¤ÀÎÃ¶, ±èÁø¿í, ÀÌ»óÁØ, ÀÌ»óÀç, ¿À¼³Èñ, À±ÀçÈ¯, ³ëÇö¹Î, ¾Èº´¼®
-	Send, ^v
-	return
-
-#h::
-	IfWinExist AutoHotkey Tutorial: Macro and Hotkey Creation -
-	{
-		WinActivate
-		return
-	}
-	else
-	{
-		run, C:\Program Files\Internet Explorer\IEXPLORE.EXE
-		WinWaitActive, ºó ÆäÀÌÁö - Windows Internet Explorer provided by LG Display
-		run, http://v1.autohotkey.co.kr/
-	}
-	return
 
 ;#f::	
 ;	IfWinExist Q-Dir 3.29
@@ -428,7 +299,7 @@ click, left,548,173
 ;	}
 ;	else
 ;	{
-;		run, D:\2. »çÁ¦\Q-Dir\Q-Dir.exe
+;		run, D:\2. ì‚¬ì œ\Q-Dir\Q-Dir.exe
 ;	}
 ;	return
 
@@ -490,7 +361,7 @@ click, left,548,173
 #!c::	run, C:\WINDOWS\System32\calc.exe
 
 
-;^2::				;GMA »ó¿ì ÀÌµ¿
+;^2::				;GMA ìƒìš° ì´ë™
 ;	loop 6
 ;	{
 ;		sleep, 50
@@ -504,42 +375,42 @@ click, left,548,173
 ;	return
 ;
 ;
-;^3::				;GMA ÁÂÇÏ ÀÌµ¿
-;				MouseClick, left, 453, 94		; ½Ã¼³ Á¶È¸
+;^3::				;GMA ì¢Œí•˜ ì´ë™
+;				MouseClick, left, 453, 94		; ì‹œì„¤ ì¡°íšŒ
 ;				Sleep, 900
-;				MouseClick, left, 258, 215		; ½Ã¼³ ¼±ÅÃ
+;				MouseClick, left, 258, 215		; ì‹œì„¤ ì„ íƒ
 ;				Sleep, 100
-;				MouseClick, left, 172, 504		; ½ÃÀÛ½Ã°£ ¼±ÅÃ
+;				MouseClick, left, 172, 504		; ì‹œì‘ì‹œê°„ ì„ íƒ
 ;				Sleep, 300
 ;				send, {End}
 ;				Sleep, 100
 ;				send, {PgUp 5}
-;				MouseClick, left, 178, 480		; ½Ã°£ ¼±ÅÃ
+;				MouseClick, left, 178, 480		; ì‹œê°„ ì„ íƒ
 ;				Sleep, 100
-;				MouseClick, left, 445, 505		; ¼±ÅÃÅ° ´©¸§
+;				MouseClick, left, 445, 505		; ì„ íƒí‚¤ ëˆ„ë¦„
 ;				Sleep, 100
-;				MouseClick, left, 446, 554		; Sub Ã¢ Á¾·á
+;				MouseClick, left, 446, 554		; Sub ì°½ ì¢…ë£Œ
 ;				Sleep, 100
-;				WinWaitActive,  http://bizsupport.lgdisplay.com:3100 - OneClick - Microsoft Internet Explorer
+;				WinWaitActive,  http://bizsupport
 ;				Sleep, 100
-;				MouseClick, left, 242, 250		; ÀÌ¿ë¸ñÀû ÀÔ·Â Å¬¸¯
-;				clipboard=All In One TDR ÆÀ³» °æ±â
-;				Send, ^v				; ÀÌ¿ë¸ñÀû ÀÔ·Â
-;				MouseClick, left, 699, 399		; ÀÌ¿ëÀÎ¿ø¼ö Å¬¸¯
+;				MouseClick, left, 242, 250		; ì´ìš©ëª©ì  ì…ë ¥ í´ë¦­
+;				clipboard=All In 
+;				Send, ^v				; ì´ìš©ëª©ì  ì…ë ¥
+;				MouseClick, left, 699, 399		; ì´ìš©ì¸ì›ìˆ˜ í´ë¦­
 ;;				Sleep, 100
-;				send, {Numpad9}				; ÀÌ¿ëÀÎ¿ø¼ö ÀÔ·Â
-;				MouseClick, left, 794, 402		; ÀÌ¿ëÀÎ¿ø¼ö Ã¼Å©
+;				send, {Numpad9}				; ì´ìš©ì¸ì›ìˆ˜ ì…ë ¥
+;				MouseClick, left, 794, 402		; ì´ìš©ì¸ì›ìˆ˜ ì²´í¬
 ;				WinWaitActive, Microsoft Internet Explorer
 ;				;Sleep, 100
-;				MouseClick, left, 89, 96		; È®ÀÎ
+;				MouseClick, left, 89, 96		; í™•ì¸
 ;				Sleep, 100
-;				MouseClick, left, 737, 632		; ½ÅÃ»
+;				MouseClick, left, 737, 632		; ì‹ ì²­
 ;				Sleep, 100
 ;				send, {Enter}
 ;return
 
 
-^2::				;mini ¶ó¿ìÆÃ ÀÌµ¿
+^2::				;mini ë¼ìš°íŒ… ì´ë™
 	loop 4
 	{
 		sleep, 50
@@ -551,28 +422,6 @@ click, left,548,173
 		send, {right}
 	}
 	return
-
-
-!1::
-	clipboard=LC650LQD-GJP1-831-S
-	send {f8}
-	return
-
-;#1::	
-;	clipboard=LC550LUD-LGP1-831
-;	Send, ^v
-;	return
-;#1::	
-;	loop,1
-;	{
-;		Send, ^{insert}
-;		Send, {enter}
-;		sleep, 50
-;		Send, +{insert}
-;		Send, {enter}
-;		sleep, 50
-;	}
-;	return
 
 ;#2::	
 ;	loop,10
@@ -586,44 +435,32 @@ click, left,548,173
 ;	return
 
 
-!#1::
-	clipboard=LC770LQD-LGP1-L31
-	Send, ^v
-	return
-
-!2::	
-	clipboard=LC650LQD-GHP7-Y31-S
-	Send, ^v
-	return
-
-;;;;LC550LUD-LGP1-831  ;; D1113DAA55ALK
-
 
 ;#3::
-;	IfWinExist »ç¿Ü ¹ß½Å¸ŞÀÏ ¼±ÅÃ»çÇ× -- À¥ ÆäÀÌÁö ´ëÈ­ »óÀÚ
+;	IfWinExist ì‚¬ì™¸ ë°œì‹ ë©”ì¼ ì„ íƒì‚¬í•­ -- ì›¹ í˜ì´ì§€ ëŒ€í™” ìƒì
 ;	{
 ;	    WinActivate
 ;	}
 ;		
-;	click,left, 321,249 ;; ¾÷¹«¸ŞÀÏ
+;	click,left, 321,249 ;; ì—…ë¬´ë©”ì¼
 ;	sleep,50
 ;	click,left, 146,531
 ;	sleep,50
-;	clipboard=»ùÇÃ¿äÃ»
+;	clipboard=ìƒ˜í”Œìš”ì²­
 ;	Send, ^v
 ;	click,left, 187,643
 ;	sleep,50
-;	clipboard=º¸¾È»çÇ× ¾øÀ½
+;	clipboard=ë³´ì•ˆì‚¬í•­ ì—†ìŒ
 ;	Send, ^v
 
 ;	return
 
-;3::	; ¿øÀÚÀç ¹°Ã» ÀÚÀç±¸ºĞ
+;3::	; ì›ìì¬ ë¬¼ì²­ ìì¬êµ¬ë¶„
 ;	click 2
 ;	sleep, 100
 ;	Send, {WheelDown}
 ;	return
-;#3::	; ¿øÀÚÀç ¹°Ã» Çà Ãß°¡ÇÏ±â
+;#3::	; ì›ìì¬ ë¬¼ì²­ í–‰ ì¶”ê°€í•˜ê¸°
 ;	click
 ;	sleep, 5000
 ;	click
@@ -643,25 +480,9 @@ click, left,548,173
 ;	SoundBeep
 ;	return
 
-;`::	; Áø±Ş±³À° ÆäÀÌÁö ³Ñ±â±â
-;	IfWinExist http://lms.lgacademy.com - Cyber Academy -
-;	{
-;		WinActivate
-;		sleep, 100
-;		click,left, 976, 734
-;	}
-;	else
-;	{
-;		send, {`}
-;	}
-;	return
 
-!#3::	
-	clipboard=LC550EUD-SCA
-	Send, ^v
-	return
 
-;#3::	;;Ã¢¹Ù²Ù¾î ´ÙÀ½°Í º¹»ç
+;#3::	;;ì°½ë°”ê¾¸ì–´ ë‹¤ìŒê²ƒ ë³µì‚¬
 ;	Send, {AltDown}{Tab}{AltUp}
 ;	sleep, 100
 ;	Send, {Enter}
@@ -670,7 +491,7 @@ click, left,548,173
 ;	Send, {CtrlDown}{c}{CtrlUp}
 ;	Send, {AltDown}{Tab}{AltUp}
 ;	return
-;#4::	;;¼¿ ¼±ÅÃ½Ã Å¬¸³º¸µå º¹»ç
+;#4::	;;ì…€ ì„ íƒì‹œ í´ë¦½ë³´ë“œ ë³µì‚¬
 ;	Send, {F2}
 ;	Send, {ShiftDown}{Home}{ShiftUp}
 ;	Send, {CtrlDown}{c}{CtrlUp}
@@ -678,31 +499,31 @@ click, left,548,173
 ;	return
 
 /*
-#4:: 		; ½Ã·áÁ¤º¸¸¦ Ä¶¸°´õ¿¡¼­ ¸Ş¸ğÀåÀ¸·Î º¹»ç
+#4:: 		; ì‹œë£Œì •ë³´ë¥¼ ìº˜ë¦°ë”ì—ì„œ ë©”ëª¨ì¥ìœ¼ë¡œ ë³µì‚¬
 		send, {tab}
 		sleep, 30
 		send, {tab}
 		sleep, 30
 		send, {enter}
 		sleep, 1000
-		click, left, 255, 623 ; ¼³¸í ¼±ÅÃ
+		click, left, 255, 623 ; ì„¤ëª… ì„ íƒ
 		sleep, 30
 		send, ^{a}
 		send, ^{c}
-		winactivate, Microsoft Excel - ÃÖÁ¾°Ë»ç_MV14_½Ã·áÀ§Ä¡Æ÷ÇÔ(20140422)_USLÆ÷ÇÔ_20140422_1130_v0.1  [È£È¯ ¸ğµå]
+		winactivate, Microsoft Excel - ìµœì¢…ê²€ì‚¬_MV14_ì‹œë£Œìœ„ì¹˜í¬í•¨(20140422)_USLí¬í•¨_20140422_1130_v0.1  [í˜¸í™˜ ëª¨ë“œ]
 		send, ^{v}
 		send, {enter}
-		winactivate, Google Ä¶¸°´õ - Chrome
-		click, left, 238, 239 ; Á¦¸ñ º¹»ç
-		click, left, 238, 239 ; Á¦¸ñ º¹»ç
+		winactivate, Google ìº˜ë¦°ë” - Chrome
+		click, left, 238, 239 ; ì œëª© ë³µì‚¬
+		click, left, 238, 239 ; ì œëª© ë³µì‚¬
 		send, ^{a}
 		send, ^{c}		
-		click, left, 153,189 ; ÀúÀå
+		click, left, 153,189 ; ì €ì¥
 		return
 */
 
 /*
-#z::	;;LEA ÀçÀÛ¾÷
+#z::	;;LEA ì¬ì‘ì—…
 	Run, C:\Users\Administrator\Desktop\I2C_Editor_rework_140610\i2c_write_A0.exe
 	sleep, 500
 	clipboard = L.txt
@@ -744,7 +565,7 @@ click, left,548,173
 	Send, ^v
 	return
 
-#w::							;¼¿ È¸»ö
+#w::							;ì…€ íšŒìƒ‰
 ;	Send, {AltDown}ora{AltUp}
 ;	Sleep, 30
 ;	Send, {ShiftDown}{Space}{ShiftUp}
@@ -758,7 +579,7 @@ click, left,548,173
 	Send, {Enter}{Tab}{Tab}{Tab}{Tab}{Tab}{Enter}
 	return
 
-#^w::							;¼¿ ¿¬³ë¶õ»ö
+#^w::							;ì…€ ì—°ë…¸ë€ìƒ‰
 ;	Send, {AltDown}ora{AltUp}
 ;	Sleep, 30
 ;	Send, {ShiftDown}{Space}{ShiftUp}
@@ -772,7 +593,7 @@ click, left,548,173
 	click,left,275,329
 	return
 
-#!w::							;¼¿ ÇÏ´Ã»ö
+#!w::							;ì…€ í•˜ëŠ˜ìƒ‰
 	Send, {CtrlDown}1{CtrlUp}
 	Sleep, 500
 	click,left,262,43
@@ -790,31 +611,28 @@ click, left,548,173
 	Send, {CtrlDown}{ShiftDown};{CtrlUp}{ShiftUp}
 	return
 
-#!s::							;;;;; Painter¿¡ È­¸é Ä¸ÃÄ Ç×»óÀ§
+#!s::							;;;;; Painterì— í™”ë©´ ìº¡ì³ í•­ìƒìœ„
 	Run, C:\WINDOWS\system32\mspaint.exe
 	Sleep, 500
 	Send, {CtrlDown}v{CtrlUp}
-	WinSet, AlwaysOnTop, On, Á¦¸ñ ¾øÀ½ - ±×¸²ÆÇ
+	WinSet, AlwaysOnTop, On, ì œëª© ì—†ìŒ - ê·¸ë¦¼íŒ
 	return
 
-;#s::							;;;;; ÆÀÈ¸ÀÇ ºÎÀçÀÚ »ö±ò À½¿µ³Ö±â
+;#s::							;;;;; íŒ€íšŒì˜ ë¶€ì¬ì ìƒ‰ê¹” ìŒì˜ë„£ê¸°
 ;	Send, {AltDown}of{AltUp}
-;	WinWaitActive, ±Û²Ã
+;	WinWaitActive, ê¸€ê¼´
 ;	click,left, 446,166
 ;	Sleep, 300
 ;	click,left, 446,241
 ;	Sleep, 100
 ;	click,left, 507,40
 ;	return
-;!#a::							;;;;; ¼³¹® ´ë»óÀÚ Ã£¾Æ ¼±ÅÃÇÏ±â
+;!#a::							;;;;; ì„¤ë¬¸ ëŒ€ìƒì ì°¾ì•„ ì„ íƒí•˜ê¸°
 ;	Send, {CtrlDown}c{CtrlUp}
 ;	Send, {AltDown}{tab}{AltUp}
 ;	Send, {CtrlDown}f{CtrlUp}
 ;	Send, {CtrlDown}v{CtrlUp}
 ;	return	
-
-!#a::	run, http://edms.lgdisplay.com:8080/Servlet/ContentViewCmd.document?object_id=090470718000c7c2&update_log=0&rendition_type=0&url_copy=1
-
 
 
 
@@ -826,7 +644,7 @@ click, left,548,173
 		Send, {CtrlDown}c{CtrlUp}
 	}
 
-#y::							;;;;; ÆÄÇü ppt¿¡ ¿Å±â±â
+#y::							;;;;; íŒŒí˜• pptì— ì˜®ê¸°ê¸°
 	Send, {AltDown}o{AltUp}
 	Sleep, 200
 	Send, i
@@ -835,7 +653,7 @@ click, left,548,173
 	Sleep, 200
 	Send, {tab}
 	Sleep, 200
-	clipboard=14		;;; ¿ìÃø»ó´Ü
+	clipboard=14		;;; ìš°ì¸¡ìƒë‹¨
 	Send, ^v
 	Sleep, 200
 	Send, {tab}
@@ -857,7 +675,7 @@ click, left,548,173
 	Sleep, 200
 	Send, {tab}
 	Sleep, 200
-	clipboard=1		;;; ÁÂÃøÇÏ´Ü
+	clipboard=1		;;; ì¢Œì¸¡í•˜ë‹¨
 	Send, ^v
 	Sleep, 200
 	Send, {tab}
@@ -879,7 +697,7 @@ click, left,548,173
 	Sleep, 200
 	Send, {tab}
 	Sleep, 200
-	clipboard=14		;;; ¿ìÃøÇÏ´Ü
+	clipboard=14		;;; ìš°ì¸¡í•˜ë‹¨
 	Send, ^v
 	Sleep, 200
 	Send, {tab}
@@ -901,7 +719,7 @@ click, left,548,173
 	Sleep, 200
 	Send, {tab}
 	Sleep, 200
-	clipboard=1		;;; ÁÂÃø»ó´Ü
+	clipboard=1		;;; ì¢Œì¸¡ìƒë‹¨
 	Send, ^v
 	Sleep, 200
 	Send, {tab}
@@ -914,32 +732,32 @@ click, left,548,173
 	Send, {Enter}
 	Sleep, 200
 
-+^a::								;;;»õ¹®¼­ µî·Ï EDM
-	IfWinExist »õ¹®¼­ µî·Ï
++^a::								;;;ìƒˆë¬¸ì„œ ë“±ë¡ EDM
+	IfWinExist ìƒˆë¬¸ì„œ ë“±ë¡
 	{
-		Click,Left,623,178		;;¾÷¹«ºĞ·ù
-		WinWaitActive ¹®¼­°ü¸®½Ã½ºÅÛ - ¾÷¹«ºĞ·ù - Microsoft Internet Explorer
+		Click,Left,623,178		;;ì—…ë¬´ë¶„ë¥˜
+		WinWaitActive ë¬¸ì„œê´€ë¦¬ì‹œìŠ¤í…œ - ì—…ë¬´ë¶„ë¥˜ - Microsoft Internet Explorer
 		sleep, 3000
-		Click,Left,53,99		;;ºĞ·ùÃ¼°è
+		Click,Left,53,99		;;ë¶„ë¥˜ì²´ê³„
 		sleep, 150
-		Click,Left,34,129		;;Æ®¸®1
+		Click,Left,34,129		;;íŠ¸ë¦¬1
 		sleep, 150
-		Click,Left,53,149		;;Æ®¸®2
+		Click,Left,53,149		;;íŠ¸ë¦¬2
 		sleep, 150
-		Click,Left,140,186		;;Æ®¸®3
+		Click,Left,140,186		;;íŠ¸ë¦¬3
 		sleep, 150
-		Click,Left,239,473		;;È®ÀÎ
+		Click,Left,239,473		;;í™•ì¸
 		sleep, 150
-		WinWaitActive »õ¹®¼­ µî·Ï
-		Click,Left,172,436		;;½ÂÀÎ±ÇÀÚ
-		clipboard=±è¼¼¿µ
+		WinWaitActive ìƒˆë¬¸ì„œ ë“±ë¡
+		Click,Left,172,436		;;ìŠ¹ì¸ê¶Œì
+		clipboard=ê¹€ì„¸ì˜
 		Send, {CtrlDown}v{CtrlUp}
 		sleep, 200
 		Send, {Down}{Down}{Down}{Down}{Down}{Down}
 		Send, {Enter}
 		sleep, 200
-		Click,Left,196,534		;;º¸°í¹Ş´ÂÀÚ
-		clipboard=±è¼¼¿µ
+		Click,Left,196,534		;;ë³´ê³ ë°›ëŠ”ì
+		clipboard=ê¹€ì„¸ì˜
 		Send, {CtrlDown}v{CtrlUp}
 		sleep, 200
 		Send, {Down}{Down}{Down}{Down}{Down}{Down}
@@ -947,31 +765,31 @@ click, left,548,173
 		Send, {Enter}
 		MouseMove,310,652
 	}
-	IfWinExist http://edms.lgdisplay.com:8080 - ¹®¼­°ü¸®½Ã½ºÅÛ - ¹®¼­ ¼öÁ¤ - Microsoft Internet Explorer
+	IfWinExist http://edms.l
 	{
-		Click,Left,616,169		;;¾÷¹«ºĞ·ù
-		WinWaitActive http://edms.lgdisplay.com:8080 - ¹®¼­°ü¸®½Ã½ºÅÛ - ¾÷¹«ºĞ·ù - Microsoft Internet Explorer
+		Click,Left,616,169		;;ì—…ë¬´ë¶„ë¥˜
+		WinWaitActive http://edm
 		sleep, 3000
-		Click,Left,36,125		;;Æ®¸®1
+		Click,Left,36,125		;;íŠ¸ë¦¬1
 		sleep, 150
-		Click,Left,51,145		;;Æ®¸®2
+		Click,Left,51,145		;;íŠ¸ë¦¬2
 		sleep, 150
-		Click,Left,71,162		;;Æ®¸®3
+		Click,Left,71,162		;;íŠ¸ë¦¬3
 		sleep, 150
-		Click,Left,139,179		;;Æ®¸®4
+		Click,Left,139,179		;;íŠ¸ë¦¬4
 		sleep, 150
-		Click,Left,235,468		;;È®ÀÎ
+		Click,Left,235,468		;;í™•ì¸
 		sleep, 150
-		WinWaitActive »õ¹®¼­ µî·Ï
-		Click,Left,156,447		;;½ÂÀÎ±ÇÀÚ
-		clipboard=±è¼¼¿µ
+		WinWaitActive ìƒˆë¬¸ì„œ ë“±ë¡
+		Click,Left,156,447		;;ìŠ¹ì¸ê¶Œì
+		clipboard=ê¹€ì„¸ì˜
 		Send, {CtrlDown}v{CtrlUp}
 		sleep, 200
 		Send, {Down}{Down}{Down}{Down}{Down}{Down}{Down}
 		Send, {Enter}
 		sleep, 2000
-		Click,Left,156,543		;;º¸°í¹Ş´ÂÀÚ
-		clipboard=±è¼¼¿µ
+		Click,Left,156,543		;;ë³´ê³ ë°›ëŠ”ì
+		clipboard=ê¹€ì„¸ì˜
 		Send, {CtrlDown}v{CtrlUp}
 		sleep, 500
 		Send, {Down}{Down}{Down}{Down}{Down}{Down}
@@ -981,29 +799,29 @@ click, left,548,173
 	}
 	return
 
-#p::								;; È¸·Îµµ ¿À¸®±â
-		Click,Left,206,43		;; ÀÚ¸£±â
+#p::								;; íšŒë¡œë„ ì˜¤ë¦¬ê¸°
+		Click,Left,206,43		;; ìë¥´ê¸°
 		Send,{altdown}l{altup}
-		clipboard=3			;; ¿ŞÂÊ
+		clipboard=3			;; ì™¼ìª½
 		Send, {CtrlDown}v{CtrlUp}
 		Send,{altdown}r{altup}
-		clipboard=2			;; ¿À¸¥ÂÊ
+		clipboard=2			;; ì˜¤ë¥¸ìª½
 		Send, {CtrlDown}v{CtrlUp}
 		Send,{altdown}t{altup}
-		clipboard=2			;; À§
+		clipboard=2			;; ìœ„
 		Send, {CtrlDown}v{CtrlUp}
 		Send,{altdown}b{altup}
-		clipboard=2			;; ¾Æ·¡
+		clipboard=2			;; ì•„ë˜
 		Send, {CtrlDown}v{CtrlUp}
-		Click,Left,101,43		;; Å©±â
-		Send,{altdown}a{altup}		;; °¡·Î ¼¼·Î ºñÀ² °íÁ¤
-		Send,{altdown}e{altup}		;; ³ôÀÌ
+		Click,Left,101,43		;; í¬ê¸°
+		Send,{altdown}a{altup}		;; ê°€ë¡œ ì„¸ë¡œ ë¹„ìœ¨ ê³ ì •
+		Send,{altdown}e{altup}		;; ë†’ì´
 		clipboard=26.67
 		Send, {CtrlDown}v{CtrlUp}
-		Send,{altdown}d{altup}		;; ³Êºñ
+		Send,{altdown}d{altup}		;; ë„ˆë¹„
 		clipboard=35.56
 		Send, {CtrlDown}v{CtrlUp}
-		Click,Left,156,43		;; À§Ä¡
+		Click,Left,156,43		;; ìœ„ì¹˜
 		Send,{altdown}h{altup}
 		clipboard=0			
 		Send, {CtrlDown}v{CtrlUp}
@@ -1014,7 +832,7 @@ click, left,548,173
 		return
 
 
-/*  ;;;; ¿¬¼Ó Å¬¸¯ÇÏ±â
+/*  ;;;; ì—°ì† í´ë¦­í•˜ê¸°
 #9::
 	while(1000)
 	{
@@ -1027,28 +845,14 @@ click, left,548,173
 
 ;;;;;;;;http://circuitcalculator.com/wordpress/2006/01/31/pcb-trace-width-calculator
 
-;;;;;;;;413-811 °æ±âµµ ÆÄÁÖ½Ã ¿ù·Õ¸é ´öÀº¸® 1007¹øÁö LGµğ½ºÇÃ·¹ÀÌ(ÁÖ) TV È¸·Î¼³°è 2ÆÀ ±è¼¼¿µ
-
-;;;;;;;;413-811 °æ±âµµ ÆÄÁÖ½Ã ¿ù·Õ¸é ´öÀº¸® 1007¹øÁö LGµğ½ºÇÃ·¹ÀÌ(ÁÖ) OLED TV È¸·Î¼³°è 1ÆÀ
-
-;;;;;;;;413-811 °æ±âµµ ÆÄÁÖ½Ã ¿ù·Õ¸é ´öÀº¸® 1007¹øÁö LGµğ½ºÇÃ·¹ÀÌ(ÁÖ)  All In One TDR ±è¼¼¿µ
-
-;TV Circuti Design 2 Team, LG Display Co., Ltd.
-;1007, Deogeun-ri, Wollong-myeon, Paju-si
-;Gyeonggi-do, 413-811, Korea
-;T. 82-31-933-7654 M. 82-10-3921-7931 F. 82-31-933-7308
-
-
-; °­¿øµµ Ã¶¿ø±º µ¿¼ÛÀ¾ ¿ÀÁö 2¸® 669-1
-
 
 SetTimer, timechange, 100
 return
 
 timechange:
-user_hour = 22		;½Ã°¢ keyin
-user_min = 0		;ºĞ keyin
-user_sec = 0		;ÃÊ keyin
+user_hour = 22		;ì‹œê° keyin
+user_min = 0		;ë¶„ keyin
+user_sec = 0		;ì´ˆ keyin
 ;SoundBeep
 /*
 if A_Hour = %user_hour%
@@ -1058,35 +862,35 @@ if A_Hour = %user_hour%
 		if A_Sec = %user_sec%
 		{
 			sleep, 100
-			MouseClick, left, 453, 94		; ½Ã¼³ Á¶È¸
+			MouseClick, left, 453, 94		; ì‹œì„¤ ì¡°íšŒ
 			Sleep, 600
-			MouseClick, left, 258, 215		; ½Ã¼³ ¼±ÅÃ
+			MouseClick, left, 258, 215		; ì‹œì„¤ ì„ íƒ
 			Sleep, 100
-			MouseClick, left, 172, 504		; ½ÃÀÛ½Ã°£ ¼±ÅÃ
+			MouseClick, left, 172, 504		; ì‹œì‘ì‹œê°„ ì„ íƒ
 			Sleep, 300
 			send, {End}
 			Sleep, 100
 			send, {PgUp 5}
-			MouseClick, left, 178, 480		; ½Ã°£ ¼±ÅÃ
+			MouseClick, left, 178, 480		; ì‹œê°„ ì„ íƒ
 			Sleep, 100
-			MouseClick, left, 445, 505		; ¼±ÅÃÅ° ´©¸§
+			MouseClick, left, 445, 505		; ì„ íƒí‚¤ ëˆ„ë¦„
 			Sleep, 100
-			MouseClick, left, 446, 554		; Sub Ã¢ Á¾·á
+			MouseClick, left, 446, 554		; Sub ì°½ ì¢…ë£Œ
 			Sleep, 100
-			WinWaitActive,  http://bizsupport.lgdisplay.com:3100 - OneClick - Microsoft Internet Explorer
+			WinWaitActive,  http://bizsupport.
 			Sleep, 100
-			MouseClick, left, 242, 250		; ÀÌ¿ë¸ñÀû ÀÔ·Â Å¬¸¯
-			clipboard=All In One TDR ÆÀ³» °æ±â
-			Send, ^v				; ÀÌ¿ë¸ñÀû ÀÔ·Â
-			MouseClick, left, 699, 399		; ÀÌ¿ëÀÎ¿ø¼ö Å¬¸¯
+			MouseClick, left, 242, 250		; ì´ìš©ëª©ì  ì…ë ¥ í´ë¦­
+			clipboard=All In One TDR íŒ€ë‚´ ê²½ê¸°
+			Send, ^v				; ì´ìš©ëª©ì  ì…ë ¥
+			MouseClick, left, 699, 399		; ì´ìš©ì¸ì›ìˆ˜ í´ë¦­
 			Sleep, 100
-			send, {Numpad9}				; ÀÌ¿ëÀÎ¿ø¼ö ÀÔ·Â
-			MouseClick, left, 794, 402		; ÀÌ¿ëÀÎ¿ø¼ö Ã¼Å©
+			send, {Numpad9}				; ì´ìš©ì¸ì›ìˆ˜ ì…ë ¥
+			MouseClick, left, 794, 402		; ì´ìš©ì¸ì›ìˆ˜ ì²´í¬
 			WinWaitActive, Microsoft Internet Explorer
 			Sleep, 100
-			MouseClick, left, 89, 96		; È®ÀÎ
+			MouseClick, left, 89, 96		; í™•ì¸
 			Sleep, 100
-			MouseClick, left, 737, 632		; ½ÅÃ»
+			MouseClick, left, 737, 632		; ì‹ ì²­
 			Sleep, 100
 			send, {Enter}
 		}
@@ -1135,9 +939,6 @@ f8::
 	return
 */
 
-::l53::LC550LUD-LGP3-831-S
-::l54::LC550LUD-LGP4-831-S
-::l55::LC550LUD-LGP5-831-S
 ::btw::by the way
 
 ^!r::reload 
