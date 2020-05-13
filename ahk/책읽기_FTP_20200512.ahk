@@ -16,7 +16,7 @@ Numpad1:: nextpage()
 Numpad4:: prevpage()
 Numpad5:: centerFocus()
 Numpad2:: pagezoomLU(5,"+",17,"left",5,"right",15,"up")
-Numpad3:: pageRU(40,"right",38,"up")
+Numpad3:: pageRU(47,"right",47,"up")
 Numpad0:: pageDown(12,"down")
 Numpad5 & Numpad0:: pageDown(12,"up")
 
@@ -38,8 +38,8 @@ prevpage()
 	Send, !d^c
 	sleep 200
 	filepath=%clipboard%
-	FoundPos := RegExMatch(filepath, "IMG_(.*).JPG", SubPat)
-	clipboard := RegExReplace(filepath, "IMG_(.*).JPG", "IMG_" SubPat1-1 ".JPG")
+	FoundPos := RegExMatch(filepath, "IMG_(.*)(.JPG|.jpg)", SubPat)
+	clipboard := RegExReplace(filepath, "IMG_(.*)(.JPG|.jpg)", "IMG_" SubPat1-1 ".JPG")
 	Send, ^v{enter}
 	return
 }
@@ -50,8 +50,8 @@ nextpage()
 	Send, !d^c
 	sleep 200
 	filepath=%clipboard%
-	FoundPos := RegExMatch(filepath, "IMG_(.*).JPG", SubPat)
-	clipboard := RegExReplace(filepath, "IMG_(.*).JPG", "IMG_" SubPat1+1 ".JPG")
+	FoundPos := RegExMatch(filepath, "IMG_(.*)(.JPG|.jpg)", SubPat)
+	clipboard := RegExReplace(filepath, "IMG_(.*)(.JPG|.jpg)", "IMG_" SubPat1+1 ".JPG")
 	Send, ^v{enter}
 	return
 }
