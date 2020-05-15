@@ -19,6 +19,10 @@ Numpad2:: pagezoomLU(5,"+",17,"left",5,"right",15,"up")
 Numpad3:: pageRU(47,"right",47,"up")
 Numpad0:: pageDown(12,"down")
 Numpad5 & Numpad0:: pageDown(12,"up")
+NumpadSub::send,^{-}
+NumpadAdd::send,^{+}
+NumpadMult::send,^{pgdn}
+NumpadDiv::send,^{pgUp}
 
 Numpad8::send,^+b
 Numpad9::send,^z
